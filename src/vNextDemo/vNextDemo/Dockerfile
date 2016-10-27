@@ -4,6 +4,7 @@
 COPY ./bin/Release/netcoreapp1.0/publish /app
 
 # Define
-ENV ASPNETCORE_URLS http://*:8889
-EXPOSE 8889
-ENTRYPOINT ["dotnet", "app/vNextDemo.dll"]
+WORKDIR /app
+EXPOSE 80
+ENTRYPOINT ["dotnet", "vNextDemo.dll"]
+
