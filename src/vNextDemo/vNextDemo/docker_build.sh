@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build . -t dotnet:vnext --force-rm
+docker build . --force-rm -t efaruk/dotnet:vnext
