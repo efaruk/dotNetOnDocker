@@ -29,4 +29,4 @@ RUN ln -s -f /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 # Nginx Listens 80 and Nancy listens 8888. Nginx configured as reverse proxy and static file handler...
 EXPOSE 80
 ENTRYPOINT ["/usr/local/bin/init.sh"]
-#CMD ["mono", "/app/MonoDemo.exe"]
+
