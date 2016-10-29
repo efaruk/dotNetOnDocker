@@ -15,6 +15,8 @@ namespace MonoDemo
         {
 
             var uri = "http://localhost:8888/";
+            AsciiArt.AsciiArt.Write("NancyFx");
+            AsciiArt.AsciiArt.WriteLineSeparator('~');
             Console.WriteLine("Starting Nancy Host on {0}\r\n", uri);
             var configuration = new HostConfiguration
             {
@@ -24,9 +26,6 @@ namespace MonoDemo
             // initialize an instance of NancyHost
             var host = new NancyHost(new Uri(uri), bootStrapper, configuration);
             Start(host); // start hosting
-
-            // AsciiArt.AsciiArt.Write("NancyFx")
-            // AsciiArt.AsciiArt.WriteLineSeparator('~');
 
             // check if we're running on mono
             if (Type.GetType("Mono.Runtime") != null)
@@ -49,8 +48,8 @@ namespace MonoDemo
                 Console.WriteLine("Running on .Net");
                 WaitForTerminationOnWindows();
             }
-
             Console.WriteLine("Stopping Nancy Host");
+            AsciiArt.AsciiArt.WriteLineSeparator('~');
             Stop(host); // stop hosting
         }
 
@@ -91,6 +90,7 @@ namespace MonoDemo
             while (!t.Equals("q", StringComparison.InvariantCultureIgnoreCase))
             {
                 Console.WriteLine("To stop process press Q and accept.");
+                AsciiArt.AsciiArt.WriteLineSeparator('~');
                 t = Console.ReadLine() ?? string.Empty;
             }
         }
@@ -98,6 +98,7 @@ namespace MonoDemo
         private static void WaitForTerminationOnUnix()
         {
             Console.WriteLine("To stop process send a termination signal.");
+            AsciiArt.AsciiArt.WriteLineSeparator('~');
             // on mono, processes will usually run as daemons - this allows you to listen
             // for termination signals (ctrl+c, shutdown, etc) and finalize correctly
             UnixSignal.WaitAny(new[]
