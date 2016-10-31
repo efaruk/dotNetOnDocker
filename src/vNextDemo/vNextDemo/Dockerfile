@@ -8,7 +8,7 @@ LABEL description="vNextDemo image based microsoft/aspnetcore"
 MAINTAINER E. Faruk Pehlivanli
 
 # Copy
-COPY ./bin/Release/netcoreapp1.0/publish /app
+COPY ./bin/Debug/netcoreapp1.0/publish /app
 
 # Define
 WORKDIR /app

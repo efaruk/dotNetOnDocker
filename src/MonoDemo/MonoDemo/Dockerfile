@@ -8,7 +8,7 @@ LABEL description="MonoDemo image based mono"
 MAINTAINER E. Faruk Pehlivanli
 
 # Copy
-ADD ./bin/Release /app
+ADD ./bin/Debug /app
 ADD ./docker/init.sh /usr/local/bin/init.sh
 
 
